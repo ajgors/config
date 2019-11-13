@@ -4,14 +4,22 @@ killall flashfocus &
 polybar top &
 sxhkd &
 compton &
-feh --bg-fill ~/Obrazy/14.jpg &
+feh --bg-fill ~/Pictures/1.png &
+xinput set-prop 12 306 1 &
+xinput set-prop 12 310 1 &
 xinput set-prop 12 306 1 &
 xinput set-prop 12 314 1 &
-xinput set-prop 13 306 1 &
-xinput set-prop 13 314 1 &
+xinput set-prop 13 302 1 &
+xinput set-prop 13 310 1 &
+xinput set-prop 11 302 1 &
+xinput set-prop 11 310 1 &
+xinput set-prop 12 302 1 &
+xinput set-prop 12 310 1 &
 setxkbmap pl &
 sudo powertop --auto-tune &
-sudo rmod pcspkr &
+sudo rmmod pcspkr &
+wmname LG3D &
+
 
 
 
