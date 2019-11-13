@@ -7,12 +7,21 @@ super + Return
 	urxvt
 
 # program launcher
-super + d
-	rofi -show drun -modi run,window 
+super + d 
+	rofi -show drun -theme xd 
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+
+
+super + e
+	thunar
+
+super + w
+	google-chrome-unstable
+
 
 #
 # bspwm hotkeys
@@ -120,14 +129,6 @@ super + alt + shift + {Left,Down,Up,Right}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-## Media keys
-XF86AudioRaiseVolume
-	amixer sset Master 2+ & amixer -c 1 sset PCM 2+
-XF86AudioLowerVolume
-	amixer sset Master 2- & amixer -c 1 sset PCM 2-
-XF86AudioMute
-	amixer -q set Master toggle & amixer -c 1 sset PCM toggle & amixer set Speaker unmute
-
 
 #brightness
 
@@ -145,3 +146,15 @@ XF86AudioNext
 	playerctl next
 XF86AudioPrev
 	playerctl previous
+
+#volume up
+XF86AudioRaiseVolume
+	amixer -c 0 sset Master 2+ & amixer -D pulse sset Master 2%+
+
+#volume down
+XF86AudioLowerVolume
+	amixer -c 0 sset Master 2- & amixer -D pulse sset Master 2%-
+
+#mute
+XF86AudioMute
+	amixer -c 0 sset Master toggle & amixer -c 0 sset Speaker unmute & amixer -D pulse sset Master toggle
